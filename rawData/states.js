@@ -121,6 +121,4 @@ const states = [
  }
 ];
 
-module.exports = {
-  states
-}
+module.exports = states;
