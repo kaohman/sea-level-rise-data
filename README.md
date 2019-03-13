@@ -49,6 +49,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | max        | float   | returns all stations with sea level rise rates <= max (mm/yr) |
   
   Example request with query parameters: `api/v1/stations?state_id=109&min=4.0&max=5.1`
+  
   Response:
   ```json
   [
