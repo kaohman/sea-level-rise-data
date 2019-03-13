@@ -12,10 +12,10 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below.
 * ##### POST `api/v1/states`
   Users can post a new state to the states table. Required parameters for the request body are outlined below:
   
-  | Parameters    | Format        | Details                             |
-  | :------------:|:-------------:|:------------------------------------|
-  | name          | string        | state name                          |
-  | coast         | string        | ocean coastline, ex. Atlantic Coast |
+  | Parameters | Format  | Details                             |
+  | :----------|:--------|:------------------------------------|
+  | name       | string  | state name                          |
+  | coast      | string  | ocean coastline, ex. Atlantic Coast |
   
   
 * ##### GET `api/v1/states/:id`
