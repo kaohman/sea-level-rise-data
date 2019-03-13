@@ -8,7 +8,6 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
-// get all states
 app.get('/api/v1/states', async (req, res) => {
   try {
     const states = await database('states').select();
@@ -18,7 +17,6 @@ app.get('/api/v1/states', async (req, res) => {
   }
 });
 
-// get all stations also query params
 app.get('/api/v1/stations', async (req, res) => {
   const min = req.query.min;
   const max = req.query.max;
@@ -41,31 +39,28 @@ app.get('/api/v1/stations', async (req, res) => {
   }
 });
 
-// get a station by station id
 app.get('/api/v1/stations/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const stations = await database('stations').select().where('id', id);
-    if (state.length === 0) return res.status(404).json(`Station id ${id} not found.`);
-    return res.status(200).json(stations);
+    const station = await database('stations').select().where('id', parseInt(id));
+    if (station.length === 0) return res.status(404).json(`Station id ${id} not found.`);
+    return res.status(200).json(station);
   } catch (error) {
     return res.status(500).json({ error })
   }
 });
 
-// get a state by state id
 app.get('/api/v1/states/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const states = await database('states').select().where('id', id);
+    const state = await database('states').select().where('id', parseInt(id));
     if (state.length === 0) return res.status(404).json(`State id ${id} not found.`);
-    return res.status(200).json(states);
+    return res.status(200).json(state);
   } catch (error) {
     return res.status(500).json({ error })
   }
 });
 
-// post a new station
 app.post('/api/v1/stations', async (req, res) => {
   const { noaa_id, name, slr_rate, state_id } = req.body;
   for (let requiredParameter of ['noaa_id', 'name', 'slr_rate', 'state_id']) {
@@ -92,7 +87,6 @@ app.post('/api/v1/stations', async (req, res) => {
 
 });
 
-// post a new state
 app.post('/api/v1/states', async (req, res) => {
   const { name, coast } = req.body;
   for (let requiredParameter of ['name', 'coast']) {
@@ -112,7 +106,6 @@ app.post('/api/v1/states', async (req, res) => {
   }
 });
 
-// delete a station
 app.delete('/api/v1/stations/:id', async (req, res) => {
   const { id } = req.params;
   try {
