@@ -6,4 +6,20 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below.
 
 ### States
 
-* GET `api/v1/states`
+* ##### GET `api/v1/states`
+  Response sends all states in the database.
+  
+* ##### POST `api/v1/states`
+  Users can post a new state to the states table. Required parameters for the request body are outlined below:
+  
+  | Parameters    | Format        | Details                             |
+  | --------------|:-------------:|------------------------------------:|
+  | Name          | string        | State name                          |
+  | Coast         | string        | Ocean coastline, ex. Atlantic Coast |
+  
+  
+* ##### GET `api/v1/states/:id`
+  Response sends single state that matches the `id` parameter in the request.
+  
+### Stations
+
