@@ -6,7 +6,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
 
 ### States
 
-* ##### GET `api/v1/states`
+* #### GET `api/v1/states`
   Response sends all states in the database. Each state includes the following parameters:
   
   | Parameters | Format  | Details           |
@@ -15,7 +15,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | name       | string  | state name        |
   | coast      | string  | ocean coastline   |
   
-* ##### POST `api/v1/states`
+* #### POST `api/v1/states`
   Users can post a new state to the states table. Required parameters for the request body are outlined below:
   
   | Parameters | Format  | Details                             |
@@ -24,13 +24,13 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | coast      | string  | ocean coastline, ex. Atlantic Coast |
   
   
-* ##### GET `api/v1/states/:id`
+* #### GET `api/v1/states/:id`
   Response sends single state that matches the `id` parameter in the request.
   
 ### Stations
 
 
-* ##### GET `api/v1/stations`
+* #### GET `api/v1/stations`
   Response sends all stations in the database. Each station includes the following parameters:
   
   | Parameters | Format  | Details                     |
@@ -83,15 +83,17 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   ]
   ```
   
-* ##### POST `api/v1/states`
-  Users can post a new state to the states table. Required parameters for the request body are outlined below:
+* #### POST `api/v1/stations`
+  Users can post a new station to the stations table. If a duplicate `noaa_id` is given an error response will be sent. Required parameters for the request body are outlined below:
   
   | Parameters | Format  | Details                             |
   | :----------|:--------|:------------------------------------|
+  | state_id   | integer | matching state id                   |
+  | noaa_id    | integer | NOAA tide station id                |
   | name       | string  | state name                          |
-  | coast      | string  | ocean coastline, ex. Atlantic Coast |
+  | slr_rate   | float   | average sea level rise rate (mm/yr) |
   
   
-* ##### GET `api/v1/states/:id`
-  Response sends single state that matches the `id` parameter in the request.
+* #### GET `api/v1/stations/:id`
+  Response sends single station that matches the `id` parameter in the request.
 
