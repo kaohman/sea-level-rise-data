@@ -53,7 +53,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
 * #### GET `api/v1/states/:id`
   Response sends single state that matches the `id` parameter in the request.
   
-  Example request: `api/v1/states/104`
+  Example Request: `api/v1/states/104`
   
   Response:
   ```json
@@ -88,7 +88,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | min        | float   | returns all stations with sea level rise rates >= min (mm/yr) |
   | max        | float   | returns all stations with sea level rise rates <= max (mm/yr) |
   
-  Example request with query parameters: `api/v1/stations?state_id=109&min=4.0&max=5.1`
+  Example Request with query parameters: `api/v1/stations?state_id=109&min=4.0&max=5.1`
   
   Response:
   ```json
@@ -124,7 +124,7 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   ```
   
 * #### POST `api/v1/stations`
-  Users can post a new station to the stations table. If a duplicate `noaa_id` is given an error response will be sent. Required parameters for the request body are outlined below:
+  Users can post a new station to the stations table. Response is the unique id for the new station that was created. If a duplicate `noaa_id` is given an error response will be sent. Required parameters for the request body are outlined below:
   
   | Parameters | Format  | Details                             |
   | :----------|:--------|:------------------------------------|
@@ -133,7 +133,32 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | name       | string  | state name                          |
   | slr_rate   | float   | average sea level rise rate (mm/yr) |
   
+  Example Response:
+  ```json
+  [
+    542
+  ]
+  ```
   
 * #### GET `api/v1/stations/:id`
   Response sends single station that matches the `id` parameter in the request.
+  
+  Example Request: `api/v1/stations/345`
+  
+  Example Response:
+  ```json
+  [
+    {
+        "id": 345,
+        "state_id": 112,
+        "noaa_id": "9435380",
+        "slr_rate": 1.72,
+        "name": "South Beach",
+        "created_at": "2019-03-12T20:20:55.895Z",
+        "updated_at": "2019-03-12T20:20:55.895Z"
+    }
+  ]
+  ```
 
+* #### DELETE `api/v1/stations/:id`
+  Deletes a single station that matches the `id` parameter in the request. Response is a status code 204. If not match is found, an error response is sent.
