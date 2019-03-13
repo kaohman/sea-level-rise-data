@@ -3,6 +3,7 @@ This REST API contains sea level trend data for National Oceanic and Atmospheric
 
 ## Requests
 The base URL for all requests is: `https://sea-level-rise-data.herokuapp.com`.
+
 GET, POST, and DELETE requests to the API endpoints are outlined below. Responses are JSON objects.
 
 ### States
