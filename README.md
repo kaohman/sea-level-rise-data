@@ -50,7 +50,8 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   
   Example request with query parameters: `api/v1/stations?state_id=109&min=4.0&max=5.1`
   Response:
-  ```[
+  ```json
+  [
     {
         "id": 331,
         "state_id": 109,
@@ -78,7 +79,8 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
         "created_at": "2019-03-12T20:20:55.890Z",
         "updated_at": "2019-03-12T20:20:55.890Z"
     }
-]```
+  ]
+  ```
   
 * ##### POST `api/v1/states`
   Users can post a new state to the states table. Required parameters for the request body are outlined below:
