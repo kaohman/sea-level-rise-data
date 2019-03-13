@@ -15,20 +15,60 @@ All GET, POST, and DELETE requests to the API endpoints are outlined below. Resp
   | name       | string  | state name        |
   | coast      | string  | ocean coastline   |
   
+  Example Response:
+  ```json
+  [
+    {
+        "id": 91,
+        "name": "Alabama",
+        "coast": "Gulf Coast",
+        "created_at": "2019-03-12T20:20:55.808Z",
+        "updated_at": "2019-03-12T20:20:55.808Z"
+    },
+    {
+        "id": 92,
+        "name": "Alaska",
+        "coast": "West Coast",
+        "created_at": "2019-03-12T20:20:55.816Z",
+        "updated_at": "2019-03-12T20:20:55.816Z"
+    }
+  ]
+  ```
+  
 * #### POST `api/v1/states`
-  Users can post a new state to the states table. Required parameters for the request body are outlined below:
+  Users can post a new state to the states table. Response is the unique id created for the new record. Required parameters for the request body are outlined below:
   
   | Parameters | Format  | Details                             |
   | :----------|:--------|:------------------------------------|
   | name       | string  | state name                          |
   | coast      | string  | ocean coastline, ex. Atlantic Coast |
   
+  Example Response:
+  ```json
+  [
+    122
+  ]
+  ```
   
 * #### GET `api/v1/states/:id`
   Response sends single state that matches the `id` parameter in the request.
   
+  Example request: `api/v1/states/104`
+  
+  Response:
+  ```json
+  [
+    {
+        "id": 104,
+        "name": "Maine",
+        "coast": "Northern East Coast",
+        "created_at": "2019-03-12T20:20:55.826Z",
+        "updated_at": "2019-03-12T20:20:55.826Z"
+    }
+  ]
+  ```
+  
 ### Stations
-
 
 * #### GET `api/v1/stations`
   Response sends all stations in the database. Each station includes the following parameters:
