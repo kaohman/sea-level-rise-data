@@ -132,7 +132,7 @@ GET, POST, and DELETE requests to the API endpoints are outlined below. Response
   | :----------|:--------|:------------------------------------|
   | state_id   | integer | matching state id                   |
   | noaa_id    | integer | NOAA tide station id                |
-  | name       | string  | state name                          |
+  | name       | string  | station name                        |
   | slr_rate   | float   | average sea level rise rate (mm/yr) |
   
   Example Response:
