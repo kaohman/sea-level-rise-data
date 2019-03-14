@@ -9,13 +9,13 @@ const Requests = () => {
       <h3 className='database-table-names'>States</h3>
       {
         content.states.map(endpoint => {
-          return <Request content={endpoint}/>
+          return <Request content={endpoint} key={endpoint.id}/>
         })
       }
       <h3 className='database-table-names'>Stations</h3>
       {
         content.stations.map(endpoint => {
-          return <Request content={endpoint} />
+          return <Request content={endpoint} key={endpoint.id}/>
         })
       }
     </div>

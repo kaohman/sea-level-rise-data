@@ -1,6 +1,7 @@
 const content = {
   states: [
     {
+      id: 1,
       type: 'GET',
       path: 'api/v1/states',
       details: 'Response sends all states in the database. Each state in the response includes the following parameters:',
@@ -14,6 +15,7 @@ const content = {
       }
     },
     {
+      id: 2,
       type: 'POST',
       path: 'api/v1/states',
       details: 'Users can post a new state to the states table. Response is the unique id created for the new record. Required parameters for the request body are outlined below:',
@@ -31,6 +33,7 @@ const content = {
       }
     },
     {
+      id: 3,
       type: 'GET',
       path: 'api/v1/states/:id',
       details: 'Response sends single state that matches the id parameter in the request.',
@@ -42,6 +45,7 @@ const content = {
   ],
   stations: [
     {
+      id: 4,
       type: 'GET',
       path: 'api/v1/stations',
       details: 'Response sends all stations in the database. Each station in the response includes the following parameters:',
@@ -61,6 +65,7 @@ const content = {
       }
     },
     {
+      id: 5,
       type: 'POST',
       path: 'api/v1/stations',
       details: 'Users can post a new station to the stations table. Response is the unique id for the new station that was created. If a duplicate noaa_id is given an error response will be sent. Required parameters for the request body are outlined below:',
@@ -80,6 +85,7 @@ const content = {
       }
     },
     {
+      id: 6,
       type: 'GET',
       path: 'api/v1/stations/:id',
       details: 'Response sends single station that matches the id parameter in the request.',
@@ -89,6 +95,7 @@ const content = {
       }
     },
     {
+      id: 7,
       type: 'DELETE',
       path: 'api/v1/stations/:id',
       details: 'Deletes a single station that matches the id parameter in the request. Response is a status code 204. If not match is found, an error response is sent.',
