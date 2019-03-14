@@ -7,10 +7,12 @@ import Requests from '../Requests/Requests';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id='app'>
         <Nav />
-        <Header />
-        <Route path='/' component={Requests} />
+        <div id='main-content'>
+          <Header />
+          <Route path='/' component={Requests} />
+        </div>
       </div>
     );
   }

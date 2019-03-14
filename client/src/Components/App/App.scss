@@ -1,0 +1,20 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+#main-content {
+  padding: 30px 20px 10px 20px;
+}

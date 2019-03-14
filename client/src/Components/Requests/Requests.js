@@ -6,13 +6,13 @@ const Requests = () => {
 
   return (
     <div>
-      <h3>States</h3>
+      <h3 className='database-table-names'>States</h3>
       {
         content.states.map(endpoint => {
           return <Request content={endpoint}/>
         })
       }
-      <h3>Stations</h3>
+      <h3 className='database-table-names'>Stations</h3>
       {
         content.stations.map(endpoint => {
           return <Request content={endpoint} />

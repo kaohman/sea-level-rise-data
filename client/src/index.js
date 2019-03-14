@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import './main.scss';
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
