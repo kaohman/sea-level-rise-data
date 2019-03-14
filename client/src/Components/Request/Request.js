@@ -95,7 +95,18 @@ class Request extends Component {
               </label>
               {example.body &&
                 <label>Request Body:
-                  <textarea onChange={this.handleChange} id='body' value={this.state.body}></textarea>
+                  <CodeMirror
+                    id='body'
+                    options={{
+                      mode: 'javascript',
+                      json: true,
+                      smartIndent: true,
+                      theme: 'material',
+                      lineWrapping: true
+                    }}
+                    value={this.state.body}
+                  />
+                  {/* <textarea onChange={this.handleChange} id='body' value={this.state.body}></textarea> */}
                 </label>
               }
               <button type='submit'>Send Request</button>
@@ -106,7 +117,7 @@ class Request extends Component {
                 <CodeMirror
                   options={{
                     mode: 'javascript',
-                    jsonld: true,
+                    json: true,
                     smartIndent: true,
                     readOnly: true,
                     theme: 'material',
@@ -114,7 +125,7 @@ class Request extends Component {
                   }}
                   value={JSON.stringify(this.state.response)}
                 />
-              <button className='hide-button' onClick={this.hideResponse}>Hide Response</button>
+              <button onClick={this.hideResponse}>Hide Response</button>
               </div>
             }
           </div>

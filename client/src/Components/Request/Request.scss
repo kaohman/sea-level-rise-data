@@ -33,12 +33,14 @@ th {
 }
 
 input, textarea {
+  background-color: #263238;
+  color: lightblue;
   width: 400px;
   font-size: 16px;
   margin: 10px 0 20px 0;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: none;
   display: block;
 
   &:focus {
@@ -62,10 +64,6 @@ button {
   }
 }
 
-.hide-button {
-  margin-top: 10px;
-}
-
 .response {
   margin: 15px 0 5px 0;
 }
@@ -79,5 +77,14 @@ button {
   font-size: 14px;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+label {
+  .CodeMirror {
+    margin-top: 10px;
+    width: 400px;
+    height: 100px;
+  }
 }
 
