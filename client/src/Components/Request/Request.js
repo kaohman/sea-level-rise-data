@@ -21,7 +21,7 @@ class Request extends Component {
     const { path, body } = this.state;
     const data = type === 'POST' ? body : null;
     const response = await fetchData(path, type, data);
-    await this.setState({ response });
+    await this.setState({ response: JSON.stringify(response) });
   }
 
   hideResponse = () => {
@@ -46,7 +46,7 @@ class Request extends Component {
   }
   
   render() {
-    const { id, type, path, details, table, example, hash } = this.props.content;
+    const { type, path, details, table, example, hash } = this.props.content;
     let queryTable;
     let queryText;
     if (this.props.content.queryText) {
@@ -122,7 +122,7 @@ class Request extends Component {
                     theme: 'material',
                     lineWrapping: true
                   }}
-                  value={JSON.stringify(this.state.response)}
+                  value={this.state.response}
                 />
               <button onClick={this.hideResponse}>Hide Response</button>
               </div>
