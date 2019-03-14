@@ -2,17 +2,21 @@
   padding: 20px 20px;
   background-color: lightgrey;
 
+  #fixed-div {
+    position: fixed;
+  }
+
   a {
     text-decoration: none;
     color: black;
 
     &:hover {
-      color: green;
+      color: blue;
     }
   }
 
   .active {
-    color: green;
+    color: blue;
   }
 
   h4 {

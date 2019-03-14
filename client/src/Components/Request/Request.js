@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 class Request extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Request extends Component {
   }
   
   render() {
-    const { type, path, details, table, example } = this.props.content;
+    const { type, path, details, table, example, hash } = this.props.content;
     let queryTable;
     let queryText;
     if (this.props.content.queryText) {
@@ -29,7 +30,7 @@ class Request extends Component {
     }
     return (
       <div className='request'>
-        <h3>{type} <span>{path}</span></h3>
+        <h3 id={`${this.props.type}-${hash}`}>{type} <span>{path}</span></h3>
         <p>{details}</p>
         {table && 
           <table>
@@ -60,13 +61,17 @@ class Request extends Component {
           <div>
             <p className='example'>Try Out An Example Request</p>
             <form>
-              <label>Request Path
+              <label>Request Path:
                 <input value={example.path}></input>
               </label>
-              <label>Request Body
-                <textarea value={example.body}></textarea>
-              </label>
+              {example.body &&
+                <label>Request Body:
+                  <textarea value={example.body}></textarea>
+                </label>
+              }
+              <button type='submit'>Send Request</button>
             </form>
+            <p className='response'>Response:</p>
             <textarea></textarea>
           </div>
         }

@@ -6,16 +6,16 @@ const Requests = () => {
 
   return (
     <div>
-      <h3 className='database-table-names'>States</h3>
+      <h3 id='state-top' className='database-table-names'>States</h3>
       {
         content.states.map(endpoint => {
-          return <Request content={endpoint} key={endpoint.id}/>
+          return <Request type='state' content={endpoint} key={endpoint.id}/>
         })
       }
-      <h3 className='database-table-names'>Stations</h3>
+      <h3 id='station-top' className='database-table-names'>Stations</h3>
       {
         content.stations.map(endpoint => {
-          return <Request content={endpoint} key={endpoint.id}/>
+          return <Request type='station' content={endpoint} key={endpoint.id}/>
         })
       }
     </div>
