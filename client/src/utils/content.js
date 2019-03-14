@@ -42,7 +42,7 @@ const content = {
       details: 'Response sends single state that matches the id parameter in the request.',
       table: null,
       example: {
-        path: 'api/v1/states/104',
+        path: 'api/v1/states/1',
       }
     }
   ],
@@ -65,7 +65,7 @@ const content = {
         response: ['returns all stations with the matching state id', 'NOAA tide station id', 'returns all stations with sea level rise rates >= min (mm/yr)', 'returns all stations with sea level rise rates <= max (mm/yr)']
       },
       example: {
-        path: 'api/v1/stations?state_id=109&min=4.0&max=5.1'
+        path: 'api/v1/stations?state_id=1&min=1.0&max=5.1'
       }
     },
     {
@@ -82,7 +82,7 @@ const content = {
       example: {
         path: 'api/v1/stations',
         body: {
-          state_id: 109,
+          state_id: 1,
           noaa_id: 1234,
           name: 'New Station',
           slr_rate: 1.0
@@ -97,7 +97,7 @@ const content = {
       details: 'Response sends single station that matches the id parameter in the request.',
       table: null,
       example: {
-        path: 'api/v1/stations/345',
+        path: 'api/v1/stations/1',
       }
     },
     {
@@ -107,7 +107,9 @@ const content = {
       path: 'api/v1/stations/:id',
       details: 'Deletes a single station that matches the id parameter in the request. Response is a status code 204. If not match is found, an error response is sent.',
       table: null,
-      example: null
+      example: {
+        path: null
+      }
     }
   ]
 }

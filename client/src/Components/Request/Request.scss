@@ -40,6 +40,10 @@ input, textarea {
   border-radius: 5px;
   border: 1px solid black;
   display: block;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 button {
@@ -52,6 +56,14 @@ button {
   &:hover {
     background-color: lightblue;
   }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hide-button {
+  margin-top: 10px;
 }
 
 .response {
@@ -61,5 +73,11 @@ button {
 .request {
   padding: 10px;
   border-top: 1px solid grey;
+}
+
+.CodeMirror {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
 }
 

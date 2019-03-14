@@ -9,7 +9,7 @@ const Nav = () => {
       <NavLink smooth to='#top'><h5>Back to top</h5></NavLink>
       <NavLink smooth to='#state-top'><h4>States</h4></NavLink>
       <NavLink smooth to='#state-get-all'><h5>GET all states</h5></NavLink>
-      <NavLink smooth alignToTop to='#state-post'><h5>POST new state</h5></NavLink>
+      <NavLink smooth to='#state-post'><h5>POST new state</h5></NavLink>
       <NavLink smooth to='#state-get-single'><h5>GET single state</h5></NavLink>
       <NavLink smooth to='#station-top'><h4>Stations</h4></NavLink>
       <NavLink smooth to='#station-get-all'><h5>GET all stations</h5></NavLink>
