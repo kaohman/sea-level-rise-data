@@ -106,7 +106,6 @@ class Request extends Component {
                     }}
                     value={this.state.body}
                   />
-                  {/* <textarea onChange={this.handleChange} id='body' value={this.state.body}></textarea> */}
                 </label>
               }
               <button type='submit'>Send Request</button>
