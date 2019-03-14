@@ -68,7 +68,7 @@ app.post('/api/v1/stations', async (req, res) => {
   }
 
   try {
-    const state = await database('states').select('id').where('name', state_name);
+    const state = await database('states').select('id').where('id', state_id);
     if (state.length === 0) return res.status(404).json(`State id ${state_id} not found.`)
 
     const dupStation = await database('stations').select().where('noaa_id', noaa_id);
@@ -90,7 +90,7 @@ app.post('/api/v1/stations', async (req, res) => {
 app.post('/api/v1/states', async (req, res) => {
   const { name, coast } = req.body;
   for (let requiredParameter of ['name', 'coast']) {
-    if (!req.body[requiredParameter]) return res.status(422).json(`Expected format: { name: <String>, noaa_id: <Integer>, slr_rate: <Float> }. You arer missing a ${requiredParameter}`);
+    if (!req.body[requiredParameter]) return res.status(422).json(`Expected format: { name: <String>, noaa_id: <Integer>, slr_rate: <Float> }. You are missing a ${requiredParameter}`);
   }
 
   try {
