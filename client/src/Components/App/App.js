@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import Requests from '../Requests/Requests';
@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <Nav />
         <Header />
-        <Route path='/requests' component={Requests} />
+        <Route path='/' component={Requests} />
       </div>
     );
   }
