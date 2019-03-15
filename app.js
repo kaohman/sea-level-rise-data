@@ -122,7 +122,6 @@ app.delete('/api/v1/stations/:id', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  console.log(__dirname + '/client/build/index.html');
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
