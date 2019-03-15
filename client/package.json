@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sea-level-rise-data.herokuapp.com/",
   "dependencies": {
     "codemirror": "^5.44.0",
     "codemirror-formatting": "^1.0.0",
