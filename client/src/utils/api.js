@@ -16,7 +16,7 @@ export const fetchData = async (path, method, data = null) => {
         }
       };
   }
-  const response = await fetch(`https://sea-level-rise-data.herokuapp.com/${path}`, options);
+  const response = await fetch(path, options);
   const json = await response.json();
 
   return json
