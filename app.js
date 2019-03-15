@@ -11,10 +11,6 @@ const database = require('knex')(configuration);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-
 app.get('/api/v1/states', async (req, res) => {
   try {
     const states = await database('states').select();
@@ -123,6 +119,11 @@ app.delete('/api/v1/stations/:id', async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error })
   }
+});
+
+app.get('*', (req, res) => {
+  console.log(__dirname + '/client/build/index.html');
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 module.exports = app;

@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/kaohman/sea-level-rise-data/issues"
   },
-  "homepage": "https://github.com/kaohman/sea-level-rise-data#readme",
+  "homepage": "https://sea-level-rise-data.herokuapp.com/",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
