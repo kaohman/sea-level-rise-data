@@ -8,6 +8,8 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
+app.use(express.static('client'));
+
 app.get('/api/v1/states', async (req, res) => {
   try {
     const states = await database('states').select();
