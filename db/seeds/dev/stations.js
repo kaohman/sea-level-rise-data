@@ -22,7 +22,7 @@ const createState = (knex, state) => {
   });
 }
 
-const createStation = async (knex, station) => {
+const createStation = (knex, station) => {
   return knex('stations').insert(station)
 }
 
